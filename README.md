@@ -13,4 +13,4 @@ Then go to Zipkin (http://localhost:9411)
 
 <img width="1024" alt="image" src="https://github.com/user-attachments/assets/57d07fb0-99e4-4ec5-bb13-353ba04df24d">
 
-<img width="1024" alt="image" src="https://github.com/user-attachments/assets/32c6f74c-bcc2-4482-bfba-669246252566">
+<img width="1024" alt="image" src="https://github.com/user-attachments/assets/357d0c8e-eaaf-4b4e-a6ba-1467a7fde778">
