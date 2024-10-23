@@ -51,8 +51,8 @@ keytool -keystore certs/ca.jks -storepass changeit -importcert -noprompt -alias 
 
 ```
 ./mvnw install -pl autoconfigure
-./mvnw spring-boot:run -pl backend -Dspring-boot.run.arguments="--spring.docker.compose.file=$(pwd)/compose.yml --server.ssl.bundle=self-signed --spring.ssl.bundle.pem.self-signed.keystore.certificate=$(pwd)/certs/server.crt --spring.ssl.bundle.pem.self-signed.keystore.private-key=$(pwd)/certs/server.key"
-./mvnw spring-boot:run -pl frontend -Dspring-boot.run.arguments="--spring.docker.compose.file=$(pwd)/compose.yml --server.ssl.bundle=self-signed --spring.ssl.bundle.pem.self-signed.keystore.certificate=$(pwd)/certs/server.crt --spring.ssl.bundle.pem.self-signed.keystore.private-key=$(pwd)/certs/server.key --spring.ssl.bundle.pem.client.truststore.certificate=$(pwd)/certs/ca.crt --server.port=8443 --backend.url=https://localhost:8082"
+./mvnw spring-boot:run -pl backend -Dspring-boot.run.arguments="--spring.docker.compose.file=$(pwd)/compose.yml --server.ssl.bundle=self-signed --spring.ssl.bundle.pem.self-signed.keystore.certificate=$(pwd)/certs/server.crt --spring.ssl.bundle.pem.self-signed.keystore.private-key=$(pwd)/certs/server.key --spring.ssl.bundle.pem.self-signed.reload-on-update=true"
+./mvnw spring-boot:run -pl frontend -Dspring-boot.run.arguments="--spring.docker.compose.file=$(pwd)/compose.yml --server.ssl.bundle=self-signed --spring.ssl.bundle.pem.self-signed.keystore.certificate=$(pwd)/certs/server.crt --spring.ssl.bundle.pem.self-signed.keystore.private-key=$(pwd)/certs/server.key --spring.ssl.bundle.pem.self-signed.reload-on-update=true --spring.ssl.bundle.pem.client.truststore.certificate=$(pwd)/certs/ca.crt --server.port=8443 --backend.url=https://localhost:8082"
 ```
 
 
