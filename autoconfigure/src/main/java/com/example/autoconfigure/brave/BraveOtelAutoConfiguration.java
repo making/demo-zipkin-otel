@@ -1,6 +1,5 @@
 package com.example.autoconfigure.brave;
 
-import io.opentelemetry.proto.trace.v1.Span;
 import org.springframework.boot.SpringBootVersion;
 import org.springframework.boot.actuate.autoconfigure.opentelemetry.OpenTelemetryProperties;
 import org.springframework.boot.actuate.autoconfigure.tracing.zipkin.ZipkinAutoConfiguration;
@@ -12,10 +11,7 @@ import org.springframework.context.annotation.Configuration;
 import zipkin2.reporter.Encoding;
 import zipkin2.reporter.otel.brave.InstrumentationScope;
 import zipkin2.reporter.otel.brave.OtlpProtoV1Encoder;
-import zipkin2.reporter.otel.brave.TagToAttribute;
 import zipkin2.reporter.otel.brave.TagToAttributes;
-
-import static zipkin2.reporter.otel.brave.TagToAttribute.stringAttribute;
 
 @Configuration(proxyBeanMethods = false)
 @AutoConfigureBefore(ZipkinAutoConfiguration.class)
